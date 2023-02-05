@@ -1,0 +1,181 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WJFS.aspx.cs" Inherits="Web.WBY.WJFS" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="../css/css.css" type="text/css" rel="stylesheet" />
+
+    <script language="javascript">
+        var Picker = new PickerControl();    
+    </script>
+
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div id="main">
+        <div id="top">
+            <iframe name="top" width="1024px" height="80px" src="../Top.htm" frameborder="0"
+                scrolling="no"></iframe>
+        </div>
+        <div id="Div1">
+            <div>
+                <table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="25" valign="middle">
+                            <table width="1024" bgcolor="#0099CC" height="23" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table" align="center">
+                            <div id="content">
+                                <asp:Panel ID="Panel1" runat="server" Width="100%">
+                                    <br />
+                                    <table cellspacing="1" cellpadding="8" align="center" class="td1" style="border-collapse: collapse">
+                                        <tr>
+                                            <td>
+                                                文件编号：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_wenjianbianh" runat="server" Text=""></asp:Label>
+                                            </td>
+                                            <td align="right">
+                                                密&nbsp;&nbsp;&nbsp;&nbsp;级：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_miji" runat="server" Text=""></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                类&nbsp;&nbsp;&nbsp;&nbsp;别：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_leibie" runat="server" Text=""></asp:Label>
+                                            </td>
+                                            <td align="right">
+                                                顺 序 号：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_FNum" runat="server" Text=""></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                来文机关：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_laiwenjg" runat="server" Text=""></asp:Label>
+                                            </td>
+                                            <td align="right">
+                                                来文字号：
+                                            </td>
+                                            <td align="left">
+                                                <asp:Label ID="lbl_laiwenzh" runat="server" Text=""></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">
+                                                内容摘要：
+                                            </td>
+                                            <td colspan="3" align="left">
+                                                <asp:Label ID="lbl_nrzy" runat="server" Width="480px"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" align="center">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                传阅处室
+                                            </td>
+                                            <td colspan="3">
+                                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                                </asp:ScriptManager>
+                                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                    <ContentTemplate>
+                                                        <table border="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:ListBox ID="ListBox1" runat="server" Height="300px" Width="180px" SelectionMode="Multiple">
+                                                                    </asp:ListBox>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Button ID="Button1" runat="server" CssClass="btn1" Text=">>" ToolTip="添加" OnClick="Button1_Click" />
+                                                                    <br />
+                                                                    <br />
+                                                                    <br />
+                                                                    <asp:Button ID="Button2" runat="server" CssClass="btn1" Text="<<" ToolTip="移除" OnClick="Button2_Click" />
+                                                                </td>
+                                                                <td>
+                                                                    <asp:ListBox ID="ListBox2" runat="server" Height="300px" Width="180px" SelectionMode="Multiple">
+                                                                    </asp:ListBox>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                                <%-- <asp:ListBox ID="ListBox1" runat="server" Height="300px" Width="180px" SelectionMode="Multiple">
+                                                        </asp:ListBox>--%>
+                                                <%--  <asp:Button ID="Button1" runat="server" CssClass="btn1" Text=">>" ToolTip="添加" OnClick="Button1_Click" />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <asp:Button ID="Button2" runat="server" CssClass="btn1" Text="<<" ToolTip="移除" OnClick="Button2_Click" />--%>
+                                                <%-- <asp:ListBox ID="ListBox2" runat="server" Height="300px" Width="180px" SelectionMode="Multiple">
+                                                        </asp:ListBox>--%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                传阅领导
+                                            </td>
+                                            <td colspan="3" align="left">
+                                                <asp:CheckBoxList ID="cblist" runat="server" CellPadding="2" CellSpacing="2" RepeatColumns="3">
+                                                </asp:CheckBoxList>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="50" valign="bottom">
+                            <table class="bottom" width="1024" height="49" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="4px" bgcolor="#0099CC">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="25">
+                                    石家庄市财政局信息管理中心
+                                </tr>
+                                <tr>
+                                    <td height="20">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="bottom">
+            <iframe name="bottom" width="1024px" height="49px" src="../Bottom.htm" frameborder="0"
+                scrolling="no"></iframe>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

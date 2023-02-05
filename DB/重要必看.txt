@@ -1,0 +1,6 @@
+管理员用户名是:admin   密码是 admin 
+
+
+BZH.mdf 和 BZH_1.LDF 为数据库源文件，用的时候直接附加数据库即可。
+
+sql版本为 sql2008R 版本
